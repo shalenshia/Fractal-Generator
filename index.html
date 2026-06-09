@@ -1,0 +1,31 @@
+<script type="module" src="/src/main.ts"></script>
+
+<div class="container">
+  <canvas id="fractal" width="800" height="800"></canvas>
+
+  <div style="margin-top: 1rem; display:flex; gap:0.5rem; justify-content:center; align-items:center; flex-wrap:wrap;">
+    <label>Type
+      <select id="fractalType">
+        <option value="mandelbrot">Mandelbrot</option>
+        <option value="julia">Julia</option>
+      </select>
+    </label>
+
+    <label>Iterations
+      <input id="iterations" type="range" min="50" max="2000" value="300">
+    </label>
+
+    <label>Julia Real
+      <input id="real" type="number" value="-0.7" step="0.01">
+    </label>
+
+    <label>Julia Imag
+      <input id="imag" type="number" value="0.27015" step="0.01">
+    </label>
+
+    <button id="render">Render</button>
+    <button id="reset" title="Reset viewport (R)">Reset</button>
+  </div>
+
+  <p style="text-align:center; margin-top:0.5rem;">Zoom: mouse wheel. Pan: drag. Press 'r' to reset.</p>
+</div>
