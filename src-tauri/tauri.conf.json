@@ -14,8 +14,14 @@
     "windows": [
       {
         "title": "fractal-generator",
-        "width": 800,
-        "height": 600
+        "width": 900,
+        "height": 920,
+        "resizable": false,
+        "transparent": false,
+        "decorations": true,
+        "theme": "Dark",
+        "minWidth": 880,
+        "minHeight": 800
       }
     ],
     "security": {

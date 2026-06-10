@@ -1,7 +1,7 @@
 <script type="module" src="/src/main.ts"></script>
 
 <div class="container">
-  <canvas id="fractal" width="800" height="800"></canvas>
+  <canvas id="fractal" width="884" height="800"></canvas>
 
   <div style="margin-top: 1rem; display:flex; gap:0.5rem; justify-content:center; align-items:center; flex-wrap:wrap;">
     <label>Type
@@ -16,11 +16,13 @@
     </label>
 
     <label>Julia Real
-      <input id="real" type="number" value="-0.7" step="0.01">
+      <input id="real" type="range" min="-2" max="2" step="0.001" value="-0.7">
+      <span id="realVal">-0.700</span>
     </label>
 
     <label>Julia Imag
-      <input id="imag" type="number" value="0.27015" step="0.01">
+      <input id="imag" type="range" min="-2" max="2" step="0.001" value="0.27015">
+      <span id="imagVal">0.270</span>
     </label>
 
     <button id="render">Render</button>

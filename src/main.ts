@@ -4,7 +4,7 @@ import { Viewport } from "./types";
 const canvas = document.getElementById("fractal") as HTMLCanvasElement;
 const ctx = canvas.getContext("2d")!;
 
-const WIDTH = canvas.width = 800;
+const WIDTH = canvas.width = 884;
 const HEIGHT = canvas.height = 800;
 
 let viewport: Viewport = {
@@ -26,6 +26,8 @@ function getControls() {
     fractalType: document.getElementById("fractalType") as HTMLSelectElement,
     real: document.getElementById("real") as HTMLInputElement,
     imag: document.getElementById("imag") as HTMLInputElement,
+    realVal: document.getElementById("realVal") as HTMLElement,
+    imagVal: document.getElementById("imagVal") as HTMLElement,
   };
 }
 
@@ -111,6 +113,22 @@ window.addEventListener("keydown", (e) => {
 
 // initial render
 draw();
+
+// live-update sliders for Julia params
+const controls = getControls();
+if (controls.real && controls.imag) {
+  controls.real.addEventListener("input", () => {
+    const v = Number(controls.real.value).toFixed(3);
+    if (controls.realVal) controls.realVal.textContent = v;
+    if ((controls.fractalType as HTMLSelectElement).value === "julia") draw();
+  });
+
+  controls.imag.addEventListener("input", () => {
+    const v = Number(controls.imag.value).toFixed(3);
+    if (controls.imagVal) controls.imagVal.textContent = v;
+    if ((controls.fractalType as HTMLSelectElement).value === "julia") draw();
+  });
+}
 
 // wire reset button
 const resetBtn = document.getElementById("reset");
