@@ -35,6 +35,16 @@
   justify-content: center;
 }
 
+/* Canvas styling */
+#fractal {
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+  background-color: #000; /* fallback while rendering */
+  width: 880px; /* ensure consistent layout if CSS loaded after HTML */
+  height: 800px;
+  display: block;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -84,7 +94,8 @@ button {
 }
 
 button:hover {
-  border-color: #396cd8;
+  border-color: rgba(57,108,216,0.9);
+  transform: translateY(-1px);
 }
 button:active {
   border-color: #396cd8;
@@ -131,6 +142,52 @@ button {
 
 input[type="range"] {
   width: 180px;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  background: linear-gradient(90deg, #7aa2ff, #b58cff);
+  border-radius: 999px;
+  outline: none;
+}
+
+/* Thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  border: 2px solid rgba(0,0,0,0.15);
+}
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #ffffff;
+  border-radius: 50%;
+  border: 2px solid rgba(0,0,0,0.15);
+}
+
+/* Glassy control bar */
+.controls {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  padding: 0.6rem 0.8rem;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  backdrop-filter: blur(6px) saturate(120%);
+  -webkit-backdrop-filter: blur(6px) saturate(120%);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+.controls button {
+  background: linear-gradient(180deg, #ffffff, #e8eef8);
+  padding: 0.45em 0.9em;
+}
+
+.controls label {
+  margin: 0 4px;
 }
 
 span[id$="Val"] {
