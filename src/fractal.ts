@@ -1,4 +1,4 @@
-import { Viewport } from "./types";
+import type { Viewport } from "./types";
 
 // Simple, dependency-free fractal generator in TypeScript.
 // Exports functions to generate RGBA Uint8Array pixel buffers for

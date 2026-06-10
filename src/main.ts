@@ -1,5 +1,5 @@
 import { renderJuliaBuffer, renderMandelbrotBuffer } from "./fractal";
-import { Viewport } from "./types";
+import type { Viewport } from "./types";
 
 const canvas = document.getElementById("fractal") as HTMLCanvasElement;
 const ctx = canvas.getContext("2d")!;
